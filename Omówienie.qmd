@@ -1,0 +1,24 @@
+# Wstęp
+
+## Charakterystyka Problemu
+W uczeniu maszynowym jednym z kluczowych wyzwań jest efektywne przetwarzanie dużych zestawów danych, które często zawierają wiele zbędnych lub skorelowanych cech. Redukcja wymiarowości jest techniką przetwarzania wstępnego, która pomaga w redukcji liczby zmiennych wejściowych, zachowując przy tym jak najwięcej informacji zawartych w danych. Stosowanie tej techniki może znacząco poprawić wydajność algorytmów uczenia maszynowego poprzez zmniejszenie złożoności obliczeniowej oraz pomóc w uniknięciu nadmiaru wymiarowości.
+
+## Cel i Zakres Projektu
+Celem projektu jest zaimplementowanie i zastosowanie dwóch technik numerycznych: Analizy Głównych Składowych (PCA) oraz Rozkładu na Wartości Osobliwe (SVD) do redukcji wymiarów danych. Projekt będzie oceniał skuteczność tych metod w kontekście poprawy wydajności modeli uczenia maszynowego oraz wizualizacji danych wielowymiarowych.
+
+## Podstawowe Informacje na Temat Użytych Metod
+- **PCA (Principal Component Analysis)**: Metoda statystyczna, która przekształca początkowe, skorelowane zmienne w nowy zestaw zmiennych, które są liniowo niezależne (składowe główne). Składowe te są uzyskiwane na podstawie wartości własnych macierzy kowariancji danych.
+- **SVD (Singular Value Decomposition)**: Technika matematyczna używana do dekompozycji macierzy na trzy inne macierze, ujawniająca wewnętrzną strukturę danych, która może być użyteczna w redukcji wymiarów oraz innych zastosowaniach takich jak kompresja danych czy usuwanie szumów.
+
+# Analiza Teoretyczna
+
+## Przegląd Metod Numerycznych
+Analiza Głównych Składowych i Rozkład na Wartości Osobliwe są dwoma podstawowymi technikami redukcji wymiarowości stosowanymi w analizie danych. Obie metody są oparte na przekształceniu liniowym, jednak wykorzystują różne podejścia matematyczne do identyfikacji nowych osi danych.
+
+## Matematyczne Podstawy i Założenia
+- **PCA**: Założeniem PCA jest maksymalizacja wariancji każdej składowej, co oznacza, że pierwsza główna składowa ma największą możliwą wariancję, a każda kolejna ma mniejszą. Matematycznie, składowe są wektorami własnymi macierzy kowariancji danych, które odpowiadają największym wartościom własnym.
+- **SVD**: SVD rozkłada macierz A na trzy macierze U, $\Sigma$, V^T, gdzie U i V są ortonormalnymi macierzami wektorów własnych, a $\Sigma$ zawiera wartości osobliwe (singular values). Wartości osobliwe wskazują na "siłę" lub "ważność" poszczególnych wymiarów.
+
+## Analiza Zbieżności, Stabilności i Dokładności
+- **PCA**: Jest stosunkowo stabilna w przypadkach, gdy dane nie są zbyt zaszumione i nie posiadają wielu brakujących wartości. Zbieżność i dokładność PCA mogą być problematyczne, gdy różnice między wartości własnymi są niewielkie.
+- **SVD**: SVD jest bardziej stabilne niż PCA w obecności szumu, ponieważ minimalizuje błąd w sensie najmniejszych kwadratów. Jest to metoda bardzo efektywna, ale obliczeniowo bardziej złożona, zwłaszcza dla dużych macierzy.
