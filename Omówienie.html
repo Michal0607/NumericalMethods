@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>omówienie</title>
+<title>Projekt z Metod Numerycznych</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -66,20 +66,65 @@ window.Quarto = {
 
 </head>
 
-<body class="fullcontent">
+<body>
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#wstęp" id="toc-wstęp" class="nav-link active" data-scroll-target="#wstęp">Wstęp</a>
+  <ul class="collapse">
+  <li><a href="#charakterystyka-problemu" id="toc-charakterystyka-problemu" class="nav-link" data-scroll-target="#charakterystyka-problemu">Charakterystyka Problemu</a></li>
+  <li><a href="#cel-i-zakres-projektu" id="toc-cel-i-zakres-projektu" class="nav-link" data-scroll-target="#cel-i-zakres-projektu">Cel i Zakres Projektu</a></li>
+  <li><a href="#podstawowe-informacje-na-temat-użytych-metod" id="toc-podstawowe-informacje-na-temat-użytych-metod" class="nav-link" data-scroll-target="#podstawowe-informacje-na-temat-użytych-metod">Podstawowe Informacje na Temat Użytych Metod</a></li>
+  </ul></li>
+  <li><a href="#analiza-teoretyczna" id="toc-analiza-teoretyczna" class="nav-link" data-scroll-target="#analiza-teoretyczna">Analiza Teoretyczna</a>
+  <ul class="collapse">
+  <li><a href="#przegląd-metod-numerycznych" id="toc-przegląd-metod-numerycznych" class="nav-link" data-scroll-target="#przegląd-metod-numerycznych">Przegląd Metod Numerycznych</a></li>
+  <li><a href="#matematyczne-podstawy-i-założenia" id="toc-matematyczne-podstawy-i-założenia" class="nav-link" data-scroll-target="#matematyczne-podstawy-i-założenia">Matematyczne Podstawy i Założenia</a></li>
+  <li><a href="#analiza-zbieżności-stabilności-i-dokładności" id="toc-analiza-zbieżności-stabilności-i-dokładności" class="nav-link" data-scroll-target="#analiza-zbieżności-stabilności-i-dokładności">Analiza Zbieżności, Stabilności i Dokładności</a></li>
+  </ul></li>
+  <li><a href="#opis-implementacji" id="toc-opis-implementacji" class="nav-link" data-scroll-target="#opis-implementacji">Opis implementacji</a></li>
+  <li><a href="#testowanie" id="toc-testowanie" class="nav-link" data-scroll-target="#testowanie">Testowanie</a></li>
+  <li><a href="#wyniki-i-dyskusja" id="toc-wyniki-i-dyskusja" class="nav-link" data-scroll-target="#wyniki-i-dyskusja">Wyniki i dyskusja</a>
+  <ul class="collapse">
+  <li><a href="#zbiór-danych-o-raku-piersi" id="toc-zbiór-danych-o-raku-piersi" class="nav-link" data-scroll-target="#zbiór-danych-o-raku-piersi">Zbiór danych o <code>raku piersi</code></a></li>
+  <li><a href="#zbiór-danych-iris" id="toc-zbiór-danych-iris" class="nav-link" data-scroll-target="#zbiór-danych-iris">Zbiór danych <code>iris</code></a></li>
+  <li><a href="#zbiór-danych-titanic" id="toc-zbiór-danych-titanic" class="nav-link" data-scroll-target="#zbiór-danych-titanic">Zbiór danych <code>titanic</code></a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+</div>
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Projekt z Metod Numerycznych</h1>
+</div>
 
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 <section id="wstęp" class="level1">
 <h1>Wstęp</h1>
 <section id="charakterystyka-problemu" class="level2">
 <h2 class="anchored" data-anchor-id="charakterystyka-problemu">Charakterystyka Problemu</h2>
-<p>W uczeniu maszynowym jednym z kluczowych wyzwań jest efektywne przetwarzanie dużych zestawów danych, które często zawierają wiele zbędnych lub skorelowanych cech. Redukcja wymiarowości jest techniką przetwarzania wstępnego, która pomaga w redukcji liczby zmiennych wejściowych, zachowując przy tym jak najwięcej informacji zawartych w danych. Stosowanie tej techniki może znacząco poprawić wydajność algorytmów uczenia maszynowego poprzez zmniejszenie złożoności obliczeniowej oraz pomóc w uniknięciu przekleństwa wymiarowości.</p>
+<p>W uczeniu maszynowym jednym z kluczowych wyzwań jest efektywne przetwarzanie dużych zestawów danych, które często zawierają wiele zbędnych lub skorelowanych cech. Redukcja wymiarowości jest techniką przetwarzania wstępnego, która pomaga w redukcji liczby zmiennych wejściowych, zachowując przy tym jak najwięcej informacji zawartych w danych. Stosowanie tej techniki może znacząco poprawić wydajność algorytmów uczenia maszynowego poprzez zmniejszenie złożoności obliczeniowej oraz pomóc w uniknięciu nadmiaru wymiarowości.</p>
 </section>
 <section id="cel-i-zakres-projektu" class="level2">
 <h2 class="anchored" data-anchor-id="cel-i-zakres-projektu">Cel i Zakres Projektu</h2>
@@ -97,21 +142,39 @@ window.Quarto = {
 <h1>Analiza Teoretyczna</h1>
 <section id="przegląd-metod-numerycznych" class="level2">
 <h2 class="anchored" data-anchor-id="przegląd-metod-numerycznych">Przegląd Metod Numerycznych</h2>
-<p>Analiza Głównych Składowych i Rozkład na Wartości Osobliwe są dwoma podstawowymi technikami redukcji wymiarowości stosowanymi w analizie danych. Obie metody są oparte na przekształceniu liniowym, jednak wykorzystują różne podejścia matematyczne do identyfikacji nowych osi danych.</p>
+<p>Analiza Głównych Składowych (PCA) i Rozkład na Wartości Osobliwe (SVD) to dwie kluczowe metody redukcji wymiarowości w analizie danych. Obydwie techniki stosują przekształcenie liniowe, ale korzystają z różnych podejść matematycznych. PCA skupia się na wyznaczaniu głównych składowych poprzez analizę wariancji i jest często używana do zachowania jak największej ilości informacji. SVD natomiast dekomponuje macierze na wartości osobliwe oraz lewe i prawe wektory osobliwe, co pozwala na zastosowanie w różnorodnych kontekstach, w tym uczeniu maszynowym. W praktyce, PCA jest bardziej zorientowana na eksplorację danych i statystykę, podczas gdy SVD ma szersze zastosowanie, włączając w to obliczenia numeryczne. Obie metody pozwalają na identyfikację nowych osi danych, co ułatwia interpretację i analizę dużych zestawów danych. Dzięki temu, zarówno PCA jak i SVD są nieocenione w redukcji złożoności danych bez znaczącej utraty informacji.</p>
 </section>
 <section id="matematyczne-podstawy-i-założenia" class="level2">
 <h2 class="anchored" data-anchor-id="matematyczne-podstawy-i-założenia">Matematyczne Podstawy i Założenia</h2>
 <ul>
-<li><strong>PCA</strong>: Założeniem PCA jest maksymalizacja wariancji każdej składowej, co oznacza, że pierwsza główna składowa ma największą możliwą wariancję, a każda kolejna ma mniejszą. Matematycznie, składowe są wektorami własnymi macierzy kowariancji danych, które odpowiadają największym wartościom własnym.</li>
+<li><strong>PCA</strong>: Analiza Głównych Składowych (PCA) jest metodą statystyczną służącą do maksymalizacji wariancji w danych. Pierwsza główna składowa, którą wyznacza PCA, charakteryzuje się największą wariancją, a każda kolejna ma mniejszą. Składowe te są matematycznie reprezentowane przez wektory własne macierzy kowariancji danych, z wartościami własnymi wskazującymi na kolejno największą do najmniejszej wariancję. Ta metoda pozwala na efektywną redukcję wymiarów, zachowując przy tym kluczowe informacje z danych.</li>
 <li><strong>SVD</strong>: SVD rozkłada macierz A na trzy macierze U, <span class="math inline">\(\Sigma\)</span>, V^T, gdzie U i V są ortonormalnymi macierzami wektorów własnych, a <span class="math inline">\(\Sigma\)</span> zawiera wartości osobliwe (singular values). Wartości osobliwe wskazują na “siłę” lub “ważność” poszczególnych wymiarów.</li>
 </ul>
 </section>
 <section id="analiza-zbieżności-stabilności-i-dokładności" class="level2">
 <h2 class="anchored" data-anchor-id="analiza-zbieżności-stabilności-i-dokładności">Analiza Zbieżności, Stabilności i Dokładności</h2>
 <ul>
-<li><strong>PCA</strong>: Jest stosunkowo stabilna w przypadkach, gdy dane nie są zbyt zaszumione i nie posiadają wielu brakujących wartości. Zbieżność i dokładność PCA mogą być problematyczne, gdy różnice między wartości własnymi są niewielkie.</li>
-<li><strong>SVD</strong>: SVD jest bardziej stabilne niż PCA w obecności szumu, ponieważ minimalizuje błąd w sensie najmniejszych kwadratów. Jest to metoda bardzo efektywna, ale obliczeniowo bardziej złożona, zwłaszcza dla dużych macierzy.</li>
+<li><strong>PCA</strong>: Metoda Analizy Głównych Składowych (PCA) wykazuje stosunkowo dużą stabilność, jeśli dane analizowane są czyste, czyli nie zawierają znacznych ilości szumów oraz brakujących wartości. Kiedy dane są dobrze przygotowane, PCA efektywnie redukuje wymiarowość, zachowując istotne informacje. Jednakże, metoda ta może napotkać na trudności z zbieżnością i dokładnością analizy, jeśli różnice między wartościami własnymi macierzy kowariancji są minimalne. W takich przypadkach, bliskie sobie wartości własne mogą prowadzić do problemów z jednoznacznym określeniem kolejności głównych składowych, co wpływa na wyniki redukcji wymiarów.</li>
+<li><strong>SVD</strong>: Rozkład na Wartości Osobliwe (SVD) charakteryzuje się większą stabilnością niż Analiza Głównych Składowych (PCA) w sytuacjach, gdy dane są zaszumione. Stabilność ta wynika z faktu, że SVD minimalizuje błąd w sensie najmniejszych kwadratów, co oznacza, że metoda ta jest bardziej odporna na zakłócenia danych. SVD jest również uważana za bardzo efektywną technikę w procesie dekompozycji macierzy, jednakże wiąże się to z większymi wymaganiami obliczeniowymi, szczególnie w przypadku analizy dużych macierzy. Ta złożoność obliczeniowa może być wyzwaniem, ale wynikające z niej korzyści często przewyższają koszty, zwłaszcza w zastosowaniach wymagających precyzyjnej analizy danych.</li>
 </ul>
+</section>
+</section>
+<section id="opis-implementacji" class="level1">
+<h1>Opis implementacji</h1>
+</section>
+<section id="testowanie" class="level1">
+<h1>Testowanie</h1>
+</section>
+<section id="wyniki-i-dyskusja" class="level1">
+<h1>Wyniki i dyskusja</h1>
+<section id="zbiór-danych-o-raku-piersi" class="level2">
+<h2 class="anchored" data-anchor-id="zbiór-danych-o-raku-piersi">Zbiór danych o <code>raku piersi</code></h2>
+</section>
+<section id="zbiór-danych-iris" class="level2">
+<h2 class="anchored" data-anchor-id="zbiór-danych-iris">Zbiór danych <code>iris</code></h2>
+</section>
+<section id="zbiór-danych-titanic" class="level2">
+<h2 class="anchored" data-anchor-id="zbiór-danych-titanic">Zbiór danych <code>titanic</code></h2>
 </section>
 </section>
 

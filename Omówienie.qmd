@@ -1,3 +1,10 @@
+---
+title: "Projekt z Metod Numerycznych"
+format: html
+toc: true
+toc-location: left
+---
+
 # Wstęp
 
 ## Charakterystyka Problemu
@@ -13,12 +20,24 @@ Celem projektu jest zaimplementowanie i zastosowanie dwóch technik numerycznych
 # Analiza Teoretyczna
 
 ## Przegląd Metod Numerycznych
-Analiza Głównych Składowych i Rozkład na Wartości Osobliwe są dwoma podstawowymi technikami redukcji wymiarowości stosowanymi w analizie danych. Obie metody są oparte na przekształceniu liniowym, jednak wykorzystują różne podejścia matematyczne do identyfikacji nowych osi danych.
+Analiza Głównych Składowych (PCA) i Rozkład na Wartości Osobliwe (SVD) to dwie kluczowe metody redukcji wymiarowości w analizie danych. Obydwie techniki stosują przekształcenie liniowe, ale korzystają z różnych podejść matematycznych. PCA skupia się na wyznaczaniu głównych składowych poprzez analizę wariancji i jest często używana do zachowania jak największej ilości informacji. SVD natomiast dekomponuje macierze na wartości osobliwe oraz lewe i prawe wektory osobliwe, co pozwala na zastosowanie w różnorodnych kontekstach, w tym uczeniu maszynowym. W praktyce, PCA jest bardziej zorientowana na eksplorację danych i statystykę, podczas gdy SVD ma szersze zastosowanie, włączając w to obliczenia numeryczne. Obie metody pozwalają na identyfikację nowych osi danych, co ułatwia interpretację i analizę dużych zestawów danych. Dzięki temu, zarówno PCA jak i SVD są nieocenione w redukcji złożoności danych bez znaczącej utraty informacji.
 
 ## Matematyczne Podstawy i Założenia
-- **PCA**: Założeniem PCA jest maksymalizacja wariancji każdej składowej, co oznacza, że pierwsza główna składowa ma największą możliwą wariancję, a każda kolejna ma mniejszą. Matematycznie, składowe są wektorami własnymi macierzy kowariancji danych, które odpowiadają największym wartościom własnym.
+- **PCA**: Analiza Głównych Składowych (PCA) jest metodą statystyczną służącą do maksymalizacji wariancji w danych. Pierwsza główna składowa, którą wyznacza PCA, charakteryzuje się największą wariancją, a każda kolejna ma mniejszą. Składowe te są matematycznie reprezentowane przez wektory własne macierzy kowariancji danych, z wartościami własnymi wskazującymi na kolejno największą do najmniejszej wariancję. Ta metoda pozwala na efektywną redukcję wymiarów, zachowując przy tym kluczowe informacje z danych.
 - **SVD**: SVD rozkłada macierz A na trzy macierze U, $\Sigma$, V^T, gdzie U i V są ortonormalnymi macierzami wektorów własnych, a $\Sigma$ zawiera wartości osobliwe (singular values). Wartości osobliwe wskazują na "siłę" lub "ważność" poszczególnych wymiarów.
 
 ## Analiza Zbieżności, Stabilności i Dokładności
-- **PCA**: Jest stosunkowo stabilna w przypadkach, gdy dane nie są zbyt zaszumione i nie posiadają wielu brakujących wartości. Zbieżność i dokładność PCA mogą być problematyczne, gdy różnice między wartości własnymi są niewielkie.
-- **SVD**: SVD jest bardziej stabilne niż PCA w obecności szumu, ponieważ minimalizuje błąd w sensie najmniejszych kwadratów. Jest to metoda bardzo efektywna, ale obliczeniowo bardziej złożona, zwłaszcza dla dużych macierzy.
+- **PCA**: Metoda Analizy Głównych Składowych (PCA) wykazuje stosunkowo dużą stabilność, jeśli dane analizowane są czyste, czyli nie zawierają znacznych ilości szumów oraz brakujących wartości. Kiedy dane są dobrze przygotowane, PCA efektywnie redukuje wymiarowość, zachowując istotne informacje. Jednakże, metoda ta może napotkać na trudności z zbieżnością i dokładnością analizy, jeśli różnice między wartościami własnymi macierzy kowariancji są minimalne. W takich przypadkach, bliskie sobie wartości własne mogą prowadzić do problemów z jednoznacznym określeniem kolejności głównych składowych, co wpływa na wyniki redukcji wymiarów.
+- **SVD**: Rozkład na Wartości Osobliwe (SVD) charakteryzuje się większą stabilnością niż Analiza Głównych Składowych (PCA) w sytuacjach, gdy dane są zaszumione. Stabilność ta wynika z faktu, że SVD minimalizuje błąd w sensie najmniejszych kwadratów, co oznacza, że metoda ta jest bardziej odporna na zakłócenia danych. SVD jest również uważana za bardzo efektywną technikę w procesie dekompozycji macierzy, jednakże wiąże się to z większymi wymaganiami obliczeniowymi, szczególnie w przypadku analizy dużych macierzy. Ta złożoność obliczeniowa może być wyzwaniem, ale wynikające z niej korzyści często przewyższają koszty, zwłaszcza w zastosowaniach wymagających precyzyjnej analizy danych.
+
+# Opis implementacji
+
+# Testowanie
+
+# Wyniki i dyskusja
+
+## Zbiór danych o `raku piersi`
+
+## Zbiór danych `iris`
+
+## Zbiór danych `titanic`
