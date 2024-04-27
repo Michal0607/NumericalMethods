@@ -88,11 +88,24 @@ window.Quarto = {
   </ul></li>
   <li><a href="#opis-implementacji" id="toc-opis-implementacji" class="nav-link" data-scroll-target="#opis-implementacji">Opis implementacji</a></li>
   <li><a href="#testowanie" id="toc-testowanie" class="nav-link" data-scroll-target="#testowanie">Testowanie</a></li>
-  <li><a href="#wyniki-i-dyskusja" id="toc-wyniki-i-dyskusja" class="nav-link" data-scroll-target="#wyniki-i-dyskusja">Wyniki i dyskusja</a>
+  <li><a href="#wyniki-i-dyskusja" id="toc-wyniki-i-dyskusja" class="nav-link" data-scroll-target="#wyniki-i-dyskusja">Wyniki i dyskusja</a></li>
+  <li><a href="#zbiór-danych-breast_cancer" id="toc-zbiór-danych-breast_cancer" class="nav-link" data-scroll-target="#zbiór-danych-breast_cancer">Zbiór danych <code>breast_cancer</code></a>
   <ul class="collapse">
-  <li><a href="#zbiór-danych-o-raku-piersi" id="toc-zbiór-danych-o-raku-piersi" class="nav-link" data-scroll-target="#zbiór-danych-o-raku-piersi">Zbiór danych o <code>raku piersi</code></a></li>
-  <li><a href="#zbiór-danych-iris" id="toc-zbiór-danych-iris" class="nav-link" data-scroll-target="#zbiór-danych-iris">Zbiór danych <code>iris</code></a></li>
-  <li><a href="#zbiór-danych-titanic" id="toc-zbiór-danych-titanic" class="nav-link" data-scroll-target="#zbiór-danych-titanic">Zbiór danych <code>titanic</code></a></li>
+  <li><a href="#pca" id="toc-pca" class="nav-link" data-scroll-target="#pca">PCA</a></li>
+  <li><a href="#svd" id="toc-svd" class="nav-link" data-scroll-target="#svd">SVD</a></li>
+  <li><a href="#porównanie" id="toc-porównanie" class="nav-link" data-scroll-target="#porównanie">Porównanie</a></li>
+  </ul></li>
+  <li><a href="#zbiór-danych-iris" id="toc-zbiór-danych-iris" class="nav-link" data-scroll-target="#zbiór-danych-iris">Zbiór danych <code>iris</code></a>
+  <ul class="collapse">
+  <li><a href="#pca-1" id="toc-pca-1" class="nav-link" data-scroll-target="#pca-1">PCA</a></li>
+  <li><a href="#svd-1" id="toc-svd-1" class="nav-link" data-scroll-target="#svd-1">SVD</a></li>
+  <li><a href="#porównanie-1" id="toc-porównanie-1" class="nav-link" data-scroll-target="#porównanie-1">Porównanie</a></li>
+  </ul></li>
+  <li><a href="#zbiór-danych-titanic" id="toc-zbiór-danych-titanic" class="nav-link" data-scroll-target="#zbiór-danych-titanic">Zbiór danych <code>titanic</code></a>
+  <ul class="collapse">
+  <li><a href="#pca-2" id="toc-pca-2" class="nav-link" data-scroll-target="#pca-2">PCA</a></li>
+  <li><a href="#svd-2" id="toc-svd-2" class="nav-link" data-scroll-target="#svd-2">SVD</a></li>
+  <li><a href="#porównanie-2" id="toc-porównanie-2" class="nav-link" data-scroll-target="#porównanie-2">Porównanie</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -161,20 +174,100 @@ window.Quarto = {
 </section>
 <section id="opis-implementacji" class="level1">
 <h1>Opis implementacji</h1>
+<p>Testy zostały przeprowadzone w środowisku Python, korzystając z trzech zbiorów danych: titanic, iris, breast_cancer.</p>
+<ul>
+<li>Zbiór danych <code>iris</code> (z biblioteki sklearn.datasets): Zawiera informacje o trzech gatunkach irysów (setosa, versicolor, virginica).Każda próbka w zbiorze posiada cztery cechy: długość i szerokość płatka oraz długość i szerokość kielicha.</li>
+<li>Zbiór danych <code>breast_cancer</code> (z biblioteki sklearn.datasets): Skupia się na predykcji, czy guz piersi jest złośliwy czy łagodny, na podstawie cech takich jak tekstura, obwód, gładkość, obszar i wielkość guza, oraz inne cechy obrazu biopsji.</li>
+<li>Zbiór danych <code>titanic</code> (z biblioteki seaborn): Zawiera informacje o pasażerach Titanica, takie jak wiek, płeć, klasa, której pasażerowie byli częścią, cena biletu, a także informacje o tym, czy dana osoba przeżyła katastrofę czy nie.</li>
+</ul>
+<p>Na każdym zbiorze danych przeprowadzono standaryzację, aby poprawić jakość i porównywalność wyników. W ramach projektu zaimplementowano dwie metody redukcji wymiarowości: Analizę Składowych Głównych (PCA) oraz Rozkład Osobliwy (SVD). Każda z metod została zastosowana osobno na każdym zbiorze danych.</p>
 </section>
 <section id="testowanie" class="level1">
 <h1>Testowanie</h1>
+<p>Porównano skuteczność metod PCA i SVD na każdym z trzech zbiorów danych zarówno przed, jak i po ich zastosowaniu. Celem testów była ocena, która z metod lepiej radzi sobie z redukcją wymiarowości, zachowując przy tym kluczowe informacje zawarte w danych. Testy miały na celu nie tylko sprawdzenie jak zmienia się wydajność algorytmów klasyfikacyjnych po redukcji wymiarów, ale również ocenę, jak poszczególne metody wpływają na jakość i separowalność danych w przestrzeni cech.</p>
 </section>
 <section id="wyniki-i-dyskusja" class="level1">
 <h1>Wyniki i dyskusja</h1>
-<section id="zbiór-danych-o-raku-piersi" class="level2">
-<h2 class="anchored" data-anchor-id="zbiór-danych-o-raku-piersi">Zbiór danych o <code>raku piersi</code></h2>
 </section>
-<section id="zbiór-danych-iris" class="level2">
-<h2 class="anchored" data-anchor-id="zbiór-danych-iris">Zbiór danych <code>iris</code></h2>
+<section id="zbiór-danych-breast_cancer" class="level1">
+<h1>Zbiór danych <code>breast_cancer</code></h1>
+<section id="pca" class="level2">
+<h2 class="anchored" data-anchor-id="pca">PCA</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pca_bc.png" class="img-fluid figure-img"></p>
+<figcaption>PCA breast cancer</figcaption>
+</figure>
+</div>
+<p>Przedstawione zostały wyniki redukcji wymiarowości dla zestawu danych dotyczących raka piersi. Na podstawie lewego wykresu, który ilustruje wariancję wyjaśnioną przez poszczególne składowe, obserwujemy, że pierwszy komponent główny (PC1) odpowiada za 44% wariancji, a drugi komponent (PC2) za 19%. Łącznie daje to 63% całkowitej wyjaśnionej wariancji, co wskazuje, że te dwa komponenty zachowują większość informacji z zestawu danych. Wykres rozproszenia przedstawiający dane przed PCA ukazuje, że dane są stosunkowo dobrze zgrupowane, lecz rozproszone wzdłuż obu cech. Po transformacji PCA, wykres rozproszenia pokazuje dane w nowej przestrzeni, gdzie wyraźniej widoczna jest separacja między dwiema klasami, co może ułatwić dalszą klasyfikację.</p>
 </section>
-<section id="zbiór-danych-titanic" class="level2">
-<h2 class="anchored" data-anchor-id="zbiór-danych-titanic">Zbiór danych <code>titanic</code></h2>
+<section id="svd" class="level2">
+<h2 class="anchored" data-anchor-id="svd">SVD</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="svd_bc.png" class="img-fluid figure-img"></p>
+<figcaption>SVD breast cancer</figcaption>
+</figure>
+</div>
+<p>SVD również zastosowano do tego samego zestawu danych. Podobnie jak w PCA, wartości wyjaśnionej wariancji dla komponentów są identyczne: 44% dla pierwszego i 19% dla drugiego komponentu, co łącznie daje 63% wyjaśnionej wariancji. Wykresy rozproszenia dla danych przed i po zastosowaniu SVD wykazują podobne charakterystyki co w PCA, sugerując, że po redukcji wymiarowości obserwacje z różnych klas są lepiej oddzielone.</p>
+</section>
+<section id="porównanie" class="level2">
+<h2 class="anchored" data-anchor-id="porównanie">Porównanie</h2>
+<p>Porównując wyniki PCA i SVD, zauważamy, że obie metody osiągnęły podobne poziomy wyjaśnionej wariancji. W obu przypadkach dwa komponenty (PC1 i PC2 lub ich odpowiedniki w SVD) skutecznie oddzielają klasy obserwacji na wykresach rozproszenia. Możemy wnioskować, że dla tego konkretnego zestawu danych, obie techniki są równie efektywne w redukcji wymiarów, zachowując przy tym kluczowe informacje niezbędne do identyfikacji i rozróżnienia klas. Wykresy rozproszenia wskazują na to, że dane są teraz lepiej przygotowane do dalszej analizy, takiej jak klasyfikacja czy grupowanie.</p>
+</section>
+</section>
+<section id="zbiór-danych-iris" class="level1">
+<h1>Zbiór danych <code>iris</code></h1>
+<section id="pca-1" class="level2">
+<h2 class="anchored" data-anchor-id="pca-1">PCA</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pca_iris.png" class="img-fluid figure-img"></p>
+<figcaption>PCA iris</figcaption>
+</figure>
+</div>
+<p>Wykres wariancji wyjaśnionej przez PCA dla zestawu danych Iris prezentuje, że pierwszy główny komponent (PC1) wyjaśnia imponujące 73% wariancji, a drugi komponent (PC2) wyjaśnia dodatkowe 23%. Sumarycznie, te dwa komponenty wyjaśniają aż 96% wariancji danych. Jest to znaczący wynik, sugerujący, że redukcja wymiarów do tych dwóch komponentów zachowuje prawie całą strukturę danych. Wykres rozproszenia po lewej stronie ukazuje oryginalne dane w przestrzeni pierwszych dwóch cech, gdzie trzy gatunki irysów są już w miarę dobrze oddzielone. Natomiast wykres rozproszenia po prawej stronie, po transformacji PCA, wyraźnie oddziela gatunek setosa od pozostałych dwóch, co wskazuje na dużą efektywność PCA w izolowaniu tego gatunku na podstawie głównych komponentów.</p>
+</section>
+<section id="svd-1" class="level2">
+<h2 class="anchored" data-anchor-id="svd-1">SVD</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="svd_iris.png" class="img-fluid figure-img"></p>
+<figcaption>SVD iris</figcaption>
+</figure>
+</div>
+<p>Rezultaty SVD prezentowane na wykresach dla tych samych danych Iris również wykazują, że pierwszy komponent ma 73% wariancji wyjaśnionej, a drugi 23%. Tak jak w PCA, suma wyjaśnionej wariancji to 96%. To wskazuje na podobieństwo efektów uzyskanych przez obie techniki. Wykres rozproszenia danych przed zastosowaniem SVD pokazuje rozłożenie cech bez żadnej transformacji. Natomiast po transformacji SVD, obserwujemy podobną klarowność separacji gatunku setosa jak w PCA, z pewnymi przesunięciami punktów dla pozostałych gatunków.</p>
+</section>
+<section id="porównanie-1" class="level2">
+<h2 class="anchored" data-anchor-id="porównanie-1">Porównanie</h2>
+<p>Analizując oba zestawy wyników, PCA i SVD wykazują niemal identyczną efektywność w wyjaśnieniu wariancji danych Iris. Obydwie metody z powodzeniem redukują dane do dwóch komponentów, zachowując przy tym główną strukturę danych i umożliwiając łatwą wizualizację separacji gatunków irysów. Transformacja PCA i SVD sprawia, że gatunek setosa jest łatwo rozróżnialny od versicolor i virginica, które są również lepiej oddzielone od siebie po transformacji niż w oryginalnych danych. Oba podejścia dowodzą, że dwie wymiary są wystarczające do reprezentacji złożoności danych i mogą być wykorzystane w dalszych analizach klasyfikacyjnych czy badaniach biologicznych.</p>
+</section>
+</section>
+<section id="zbiór-danych-titanic" class="level1">
+<h1>Zbiór danych <code>titanic</code></h1>
+<section id="pca-2" class="level2">
+<h2 class="anchored" data-anchor-id="pca-2">PCA</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pca_titanic.png" class="img-fluid figure-img"></p>
+<figcaption>PCA titanic</figcaption>
+</figure>
+</div>
+<p>Dla zestawu danych związanych z Titanicem, pierwszy główny komponent (PC1) wyjaśnia 57% wariancji, a drugi komponent (PC2) odpowiada za 30% wariancji, co daje razem 87% wyjaśnionej wariancji. Wykres słupkowy jasno przedstawia tę dominację PC1 nad PC2 w zakresie wyjaśnianej wariancji. Przed transformacją PCA, oryginalne dane przedstawiające wiek i opłatę za bilet wydają się być szeroko rozproszone bez widocznej separacji między osobami, które przeżyły a tymi, które nie przeżyły. Po zastosowaniu PCA, dane są przedstawione w nowej przestrzeni zdefiniowanej przez PC1 i PC2, gdzie można zaobserwować pewną tendencję do grupowania, choć wciąż istnieje znaczne nakładanie się danych.</p>
+</section>
+<section id="svd-2" class="level2">
+<h2 class="anchored" data-anchor-id="svd-2">SVD</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="svd_titanic.png" class="img-fluid figure-img"></p>
+<figcaption>SVD titanic</figcaption>
+</figure>
+</div>
+<p>Podobnie, po zastosowaniu SVD do tych samych danych Titanic, wyniki pokazują, że pierwszy komponent wyjaśnia 56% wariancji, a drugi 31%, co łącznie również daje 87% wyjaśnionej wariancji. Wykres przed transformacją SVD pokazuje podobny rozkład danych co w przypadku PCA. Po transformacji SVD, dane są prezentowane w nowym układzie współrzędnych, gdzie rozróżnienie między osobami, które przeżyły a tymi, które nie przeżyły, jest nieco bardziej zauważalne niż na oryginalnym wykresie rozproszenia.</p>
+</section>
+<section id="porównanie-2" class="level2">
+<h2 class="anchored" data-anchor-id="porównanie-2">Porównanie</h2>
+<p>Porównując wyniki PCA i SVD dla zestawu danych Titanic, obie techniki prezentują niemal identyczną zdolność do wyjaśnienia wariancji danych, z nieznacznymi różnicami w procentowych wartościach dla poszczególnych komponentów. Co istotne, transformacje te wydają się być użyteczne w potencjalnym wzmacnianiu wzorców rozróżniających przeżywalność, co może być kluczowe w dalszej analizie predykcyjnej czy klasyfikacyjnej. Choć dane po transformacji nadal wykazują nakładanie się klas, nowa przestrzeń komponentów może oferować lepszą możliwość separacji klasyfikatora.</p>
 </section>
 </section>
 
