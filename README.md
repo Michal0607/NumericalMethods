@@ -23,7 +23,7 @@ Każdy skrypt wykonuje analizę redukcji wymiarowości na wybranym zestawie dany
 Aby uruchomić projekt lokalnie, wykonaj:
 
 ```bash
-git clone https://github.com/twoj-username/twoj-repo.git
+git clone https://github.com/Michal0607/NumericalMethods.git
 ```
 
 ## Użycie
