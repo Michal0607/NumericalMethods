@@ -20,7 +20,7 @@ model = LogisticRegression(max_iter=10000, solver='lbfgs')
 model.fit(X_train, y_train)
 
 accuracy_before_pca = accuracy_score(y_test, model.predict(X_test))
-print(f'Dokładność przed PCA: {accuracy_before_pca}')
+print(f'Accuracy before PCA: {round(accuracy_before_pca,4)}')
 
 pca = PCA(n_components=2)
 
@@ -30,20 +30,4 @@ X_test_pca = pca.transform(X_test)
 model.fit(X_train_pca, y_train)
 
 accuracy_after_pca = accuracy_score(y_test, model.predict(X_test_pca))
-print(f'Dokładność po PCA: {accuracy_after_pca}')
-
-plt.figure(figsize=(16, 6))
-
-plt.subplot(1, 2, 1) 
-sns.scatterplot(x=X_train[:, 0], y=X_train[:, 1], hue=y_train, palette='viridis')
-plt.title('Data before PCA')
-plt.xlabel('First feature')
-plt.ylabel('Second feature')
-
-plt.subplot(1, 2, 2)  
-sns.scatterplot(x=X_train_pca[:, 0], y=X_train_pca[:, 1], hue=y_train, palette='viridis')
-plt.title('Data after PCA')
-plt.xlabel('PC 1')
-plt.ylabel('PC 2')
-
-plt.show()
+print(f'Accuracy after PCA: {round(accuracy_after_pca,4)}')

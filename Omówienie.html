@@ -107,6 +107,17 @@ window.Quarto = {
   <li><a href="#svd-2" id="toc-svd-2" class="nav-link" data-scroll-target="#svd-2">SVD</a></li>
   <li><a href="#porównanie-2" id="toc-porównanie-2" class="nav-link" data-scroll-target="#porównanie-2">Porównanie</a></li>
   </ul></li>
+  <li><a href="#efekty-użycia-pca-i-svd-w-uczeniu-maszynowym" id="toc-efekty-użycia-pca-i-svd-w-uczeniu-maszynowym" class="nav-link" data-scroll-target="#efekty-użycia-pca-i-svd-w-uczeniu-maszynowym">Efekty użycia PCA i SVD w uczeniu maszynowym</a>
+  <ul class="collapse">
+  <li><a href="#wstęp-1" id="toc-wstęp-1" class="nav-link" data-scroll-target="#wstęp-1">Wstęp</a></li>
+  <li><a href="#heloc---opis-zbioru-danych" id="toc-heloc---opis-zbioru-danych" class="nav-link" data-scroll-target="#heloc---opis-zbioru-danych">Heloc - opis zbioru danych</a></li>
+  <li><a href="#przegląd-eksperymentów" id="toc-przegląd-eksperymentów" class="nav-link" data-scroll-target="#przegląd-eksperymentów">Przegląd Eksperymentów</a></li>
+  <li><a href="#wyniki-i-analiza" id="toc-wyniki-i-analiza" class="nav-link" data-scroll-target="#wyniki-i-analiza">Wyniki i Analiza</a></li>
+  <li><a href="#dyskusja" id="toc-dyskusja" class="nav-link" data-scroll-target="#dyskusja">Dyskusja</a></li>
+  <li><a href="#wnioski" id="toc-wnioski" class="nav-link" data-scroll-target="#wnioski">Wnioski</a></li>
+  <li><a href="#zalecenia" id="toc-zalecenia" class="nav-link" data-scroll-target="#zalecenia">Zalecenia</a></li>
+  </ul></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul>
 </nav>
 </div>
@@ -195,7 +206,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="pca">PCA</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="pca_bc.png" class="img-fluid figure-img"></p>
+<p><img src="PCA/results/pca_bc.png" class="img-fluid figure-img"></p>
 <figcaption>PCA breast cancer</figcaption>
 </figure>
 </div>
@@ -205,7 +216,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="svd">SVD</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="svd_bc.png" class="img-fluid figure-img"></p>
+<p><img src="SVD/results/svd_bc.png" class="img-fluid figure-img"></p>
 <figcaption>SVD breast cancer</figcaption>
 </figure>
 </div>
@@ -222,7 +233,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="pca-1">PCA</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="pca_iris.png" class="img-fluid figure-img"></p>
+<p><img src="PCA/results/pca_iris.png" class="img-fluid figure-img"></p>
 <figcaption>PCA iris</figcaption>
 </figure>
 </div>
@@ -232,7 +243,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="svd-1">SVD</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="svd_iris.png" class="img-fluid figure-img"></p>
+<p><img src="SVD/results/svd_iris.png" class="img-fluid figure-img"></p>
 <figcaption>SVD iris</figcaption>
 </figure>
 </div>
@@ -249,7 +260,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="pca-2">PCA</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="pca_titanic.png" class="img-fluid figure-img"></p>
+<p><img src="PCA/results/pca_titanic.png" class="img-fluid figure-img"></p>
 <figcaption>PCA titanic</figcaption>
 </figure>
 </div>
@@ -259,7 +270,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="svd-2">SVD</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="svd_titanic.png" class="img-fluid figure-img"></p>
+<p><img src="SVD/results/svd_titanic.png" class="img-fluid figure-img"></p>
 <figcaption>SVD titanic</figcaption>
 </figure>
 </div>
@@ -269,6 +280,64 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="porównanie-2">Porównanie</h2>
 <p>Porównując wyniki PCA i SVD dla zestawu danych Titanic, obie techniki prezentują niemal identyczną zdolność do wyjaśnienia wariancji danych, z nieznacznymi różnicami w procentowych wartościach dla poszczególnych komponentów. Co istotne, transformacje te wydają się być użyteczne w potencjalnym wzmacnianiu wzorców rozróżniających przeżywalność, co może być kluczowe w dalszej analizie predykcyjnej czy klasyfikacyjnej. Choć dane po transformacji nadal wykazują nakładanie się klas, nowa przestrzeń komponentów może oferować lepszą możliwość separacji klasyfikatora.</p>
 </section>
+</section>
+<section id="efekty-użycia-pca-i-svd-w-uczeniu-maszynowym" class="level1">
+<h1>Efekty użycia PCA i SVD w uczeniu maszynowym</h1>
+<section id="wstęp-1" class="level2">
+<h2 class="anchored" data-anchor-id="wstęp-1">Wstęp</h2>
+<p>Analiza składowych głównych (PCA) i rozkład według wartości osobliwych (SVD) to popularne techniki redukcji wymiarowości wykorzystywane w uczeniu maszynowym do przetwarzania danych o wysokim wymiarze. Te metody nie tylko przyspieszają obliczenia, ale mogą także pomagać w eliminacji szumu i korelacji między cechami.</p>
+</section>
+<section id="heloc---opis-zbioru-danych" class="level2">
+<h2 class="anchored" data-anchor-id="heloc---opis-zbioru-danych">Heloc - opis zbioru danych</h2>
+<p>Zbiór danych HELOC dostarczony przez FICO skupia się na liniach kredytowych (HELOC - Home Equity Line of Credit), które są zazwyczaj oferowane przez banki jako procent wartości kapitału własnego domu (różnica między obecną wartością rynkową domu a jego ceną zakupu). Klienci w tym zbiorze danych ubiegali się o kredyt w przedziale od 5 000 do 150 000 dolarów. Podstawowe zadanie polega na wykorzystaniu informacji o wnioskodawcy z jego raportu kredytowego do przewidywania, czy spłacą swoje konto HELOC w ciągu 2 lat. Zbiór zawiera różne cechy, takie jak szacunkowe ryzyko, liczba miesięcy od pierwszej i ostatniej transakcji, średni czas rozwiązania problemów, liczba zadowalających transakcji, procent legalnych transakcji, oraz inne wskaźniki finansowe i kredytowe.</p>
+</section>
+<section id="przegląd-eksperymentów" class="level2">
+<h2 class="anchored" data-anchor-id="przegląd-eksperymentów">Przegląd Eksperymentów</h2>
+<p>W przeprowadzonych eksperymentach zastosowano PCA i SVD do zbioru danych HELOC oraz zbioru Breast Cancer z repozytorium UCI. Do oceny modeli użyto klasyfikatora drzew decyzyjnych dla PCA oraz regresji logistycznej dla SVD i PCA.</p>
+</section>
+<section id="wyniki-i-analiza" class="level2">
+<h2 class="anchored" data-anchor-id="wyniki-i-analiza">Wyniki i Analiza</h2>
+<ol type="1">
+<li>Zbiór danych <code>HELOC</code>:</li>
+</ol>
+<ul>
+<li><strong>Przed PCA:</strong> Dokładność klasyfikacji wyniosła 62%.</li>
+<li><strong>Po PCA:</strong> Dokładność klasyfikacji spadła do 56%.</li>
+</ul>
+<ol start="2" type="1">
+<li>Zbiór danych <code>Breast Cancer (SVD)</code>:</li>
+</ol>
+<ul>
+<li><strong>Przed SVD:</strong> Dokładność klasyfikacji wyniosła 95.61%.</li>
+<li><strong>Po SVD:</strong> Dokładność klasyfikacji wzrosła do 97.37%.</li>
+</ul>
+<ol start="3" type="1">
+<li>Zbiór danych <code>Breast Cancer (SVD)</code>:</li>
+</ol>
+<ul>
+<li><strong>Przed PCA:</strong> Dokładność klasyfikacji wyniosła 95.61%.</li>
+<li><strong>Po PCA:</strong> Dokładność klasyfikacji wzrosła do 96.49%.</li>
+</ul>
+</section>
+<section id="dyskusja" class="level2">
+<h2 class="anchored" data-anchor-id="dyskusja">Dyskusja</h2>
+<p>Z przeprowadzonych eksperymentów wynika, że zastosowanie SVD i PCA może mieć różne efekty w zależności od rodzaju danych i użytego modelu:</p>
+<ul>
+<li><p>W przypadku zbioru danych HELOC zastosowanie PCA spowodowało spadek dokładności. Może to wynikać z utraty istotnych informacji, które są kluczowe dla procesu decyzyjnego w modelach drzewa decyzyjnego. PCA redukuje wymiarowość poprzez zachowanie głównych kierunków wariancji, co nie zawsze koreluje z zachowaniem najbardziej istotnych cech dla klasyfikacji.</p></li>
+<li><p>W przypadku zbioru danych Breast Cancer, zarówno PCA, jak i SVD poprawiły dokładność klasyfikacji przy użyciu regresji logistycznej. Jest to szczególnie zauważalne dla SVD, które zachowało więcej istotnych informacji w mniejszej liczbie wymiarów. To wskazuje, że dla danych, które naturalnie zawierają mniej szumu i są bardziej skoncentrowane wokół głównych składowych, redukcja wymiarowości może faktycznie poprawić wydajność klasyfikacji.</p></li>
+</ul>
+</section>
+<section id="wnioski" class="level2">
+<h2 class="anchored" data-anchor-id="wnioski">Wnioski</h2>
+<p>PCA i SVD mogą być cennymi narzędziami w przetwarzaniu danych, jednak ich efektywność jest silnie zależna od kontekstu zastosowania i charakterystyki danych. SVD wydaje się być bardziej odporny na utratę kluczowych informacji w kontekście stosowania w regresji logistycznej, podczas gdy PCA może być bardziej narażone na pomijanie ważnych cech w kontekstach, gdzie kierunki maksymalnej wariancji nie są związane z klasyfikacją.</p>
+</section>
+<section id="zalecenia" class="level2">
+<h2 class="anchored" data-anchor-id="zalecenia">Zalecenia</h2>
+<p>Przed zastosowaniem PCA czy SVD warto dokładnie analizować strukturę danych oraz prowadzić eksperymenty porównawcze, by wybrać metodę najbardziej odpowiednią dla danego problemu. Ponadto, warto rozważyć inne techniki redukcji wymiarów lub selekcji cech, które mogą lepiej odpowiadać na specyfikę danych, takie jak analiza składowych niezależnych (ICA) czy selekcja cech oparta na ważności atrybutów w modelach.</p>
+</section>
+</section>
+<section id="section" class="level1">
+<h1></h1>
 </section>
 
 </main>

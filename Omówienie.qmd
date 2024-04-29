@@ -50,13 +50,13 @@ Porównano skuteczność metod PCA i SVD na każdym z trzech zbiorów danych zar
 
 ## PCA
 
-![PCA breast cancer](pca_bc.png)
+![PCA breast cancer](PCA/results/pca_bc.png)
 
 Przedstawione zostały wyniki redukcji wymiarowości dla zestawu danych dotyczących raka piersi. Na podstawie lewego wykresu, który ilustruje wariancję wyjaśnioną przez poszczególne składowe, obserwujemy, że pierwszy komponent główny (PC1) odpowiada za 44% wariancji, a drugi komponent (PC2) za 19%. Łącznie daje to 63% całkowitej wyjaśnionej wariancji, co wskazuje, że te dwa komponenty zachowują większość informacji z zestawu danych. Wykres rozproszenia przedstawiający dane przed PCA ukazuje, że dane są stosunkowo dobrze zgrupowane, lecz rozproszone wzdłuż obu cech. Po transformacji PCA, wykres rozproszenia pokazuje dane w nowej przestrzeni, gdzie wyraźniej widoczna jest separacja między dwiema klasami, co może ułatwić dalszą klasyfikację.
 
 ## SVD
 
-![SVD breast cancer](svd_bc.png)
+![SVD breast cancer](SVD/results/svd_bc.png)
 
 SVD również zastosowano do tego samego zestawu danych. Podobnie jak w PCA, wartości wyjaśnionej wariancji dla komponentów są identyczne: 44% dla pierwszego i 19% dla drugiego komponentu, co łącznie daje 63% wyjaśnionej wariancji. Wykresy rozproszenia dla danych przed i po zastosowaniu SVD wykazują podobne charakterystyki co w PCA, sugerując, że po redukcji wymiarowości obserwacje z różnych klas są lepiej oddzielone.
 
@@ -68,13 +68,13 @@ Porównując wyniki PCA i SVD, zauważamy, że obie metody osiągnęły podobne 
 
 ## PCA
 
-![PCA iris](pca_iris.png)
+![PCA iris](PCA/results/pca_iris.png)
 
 Wykres wariancji wyjaśnionej przez PCA dla zestawu danych Iris prezentuje, że pierwszy główny komponent (PC1) wyjaśnia imponujące 73% wariancji, a drugi komponent (PC2) wyjaśnia dodatkowe 23%. Sumarycznie, te dwa komponenty wyjaśniają aż 96% wariancji danych. Jest to znaczący wynik, sugerujący, że redukcja wymiarów do tych dwóch komponentów zachowuje prawie całą strukturę danych. Wykres rozproszenia po lewej stronie ukazuje oryginalne dane w przestrzeni pierwszych dwóch cech, gdzie trzy gatunki irysów są już w miarę dobrze oddzielone. Natomiast wykres rozproszenia po prawej stronie, po transformacji PCA, wyraźnie oddziela gatunek setosa od pozostałych dwóch, co wskazuje na dużą efektywność PCA w izolowaniu tego gatunku na podstawie głównych komponentów.
 
 ## SVD
 
-![SVD iris](svd_iris.png)
+![SVD iris](SVD/results/svd_iris.png)
 
 Rezultaty SVD prezentowane na wykresach dla tych samych danych Iris również wykazują, że pierwszy komponent ma 73% wariancji wyjaśnionej, a drugi 23%. Tak jak w PCA, suma wyjaśnionej wariancji to 96%. To wskazuje na podobieństwo efektów uzyskanych przez obie techniki. Wykres rozproszenia danych przed zastosowaniem SVD pokazuje rozłożenie cech bez żadnej transformacji. Natomiast po transformacji SVD, obserwujemy podobną klarowność separacji gatunku setosa jak w PCA, z pewnymi przesunięciami punktów dla pozostałych gatunków.
 
@@ -86,16 +86,60 @@ Analizując oba zestawy wyników, PCA i SVD wykazują niemal identyczną efektyw
 
 ## PCA
 
-![PCA titanic](pca_titanic.png)
+![PCA titanic](PCA/results/pca_titanic.png)
 
 Dla zestawu danych związanych z Titanicem, pierwszy główny komponent (PC1) wyjaśnia 57% wariancji, a drugi komponent (PC2) odpowiada za 30% wariancji, co daje razem 87% wyjaśnionej wariancji. Wykres słupkowy jasno przedstawia tę dominację PC1 nad PC2 w zakresie wyjaśnianej wariancji. Przed transformacją PCA, oryginalne dane przedstawiające wiek i opłatę za bilet wydają się być szeroko rozproszone bez widocznej separacji między osobami, które przeżyły a tymi, które nie przeżyły. Po zastosowaniu PCA, dane są przedstawione w nowej przestrzeni zdefiniowanej przez PC1 i PC2, gdzie można zaobserwować pewną tendencję do grupowania, choć wciąż istnieje znaczne nakładanie się danych.
 
 ## SVD
 
-![SVD titanic](svd_titanic.png)
+![SVD titanic](SVD/results/svd_titanic.png)
 
 Podobnie, po zastosowaniu SVD do tych samych danych Titanic, wyniki pokazują, że pierwszy komponent wyjaśnia 56% wariancji, a drugi 31%, co łącznie również daje 87% wyjaśnionej wariancji. Wykres przed transformacją SVD pokazuje podobny rozkład danych co w przypadku PCA. Po transformacji SVD, dane są prezentowane w nowym układzie współrzędnych, gdzie rozróżnienie między osobami, które przeżyły a tymi, które nie przeżyły, jest nieco bardziej zauważalne niż na oryginalnym wykresie rozproszenia.
 
 ## Porównanie
 
 Porównując wyniki PCA i SVD dla zestawu danych Titanic, obie techniki prezentują niemal identyczną zdolność do wyjaśnienia wariancji danych, z nieznacznymi różnicami w procentowych wartościach dla poszczególnych komponentów. Co istotne, transformacje te wydają się być użyteczne w potencjalnym wzmacnianiu wzorców rozróżniających przeżywalność, co może być kluczowe w dalszej analizie predykcyjnej czy klasyfikacyjnej. Choć dane po transformacji nadal wykazują nakładanie się klas, nowa przestrzeń komponentów może oferować lepszą możliwość separacji klasyfikatora.
+
+# Efekty użycia PCA i SVD w uczeniu maszynowym
+
+## Wstęp
+
+Analiza składowych głównych (PCA) i rozkład według wartości osobliwych (SVD) to popularne techniki redukcji wymiarowości wykorzystywane w uczeniu maszynowym do przetwarzania danych o wysokim wymiarze. Te metody nie tylko przyspieszają obliczenia, ale mogą także pomagać w eliminacji szumu i korelacji między cechami.
+
+## Heloc - opis zbioru danych
+
+Zbiór danych HELOC dostarczony przez FICO skupia się na liniach kredytowych (HELOC - Home Equity Line of Credit), które są zazwyczaj oferowane przez banki jako procent wartości kapitału własnego domu (różnica między obecną wartością rynkową domu a jego ceną zakupu). Klienci w tym zbiorze danych ubiegali się o kredyt w przedziale od 5 000 do 150 000 dolarów. Podstawowe zadanie polega na wykorzystaniu informacji o wnioskodawcy z jego raportu kredytowego do przewidywania, czy spłacą swoje konto HELOC w ciągu 2 lat. Zbiór zawiera różne cechy, takie jak szacunkowe ryzyko, liczba miesięcy od pierwszej i ostatniej transakcji, średni czas rozwiązania problemów, liczba zadowalających transakcji, procent legalnych transakcji, oraz inne wskaźniki finansowe i kredytowe.
+
+## Przegląd Eksperymentów
+
+W przeprowadzonych eksperymentach zastosowano PCA i SVD do zbioru danych HELOC oraz zbioru Breast Cancer z repozytorium UCI. Do oceny modeli użyto klasyfikatora drzew decyzyjnych dla PCA oraz regresji logistycznej dla SVD i PCA.
+
+## Wyniki i Analiza 
+
+1. Zbiór danych `HELOC`:
+- **Przed PCA:** Dokładność klasyfikacji wyniosła 62%.
+- **Po PCA:** Dokładność klasyfikacji spadła do 56%.
+2. Zbiór danych `Breast Cancer (SVD)`:
+- **Przed SVD:** Dokładność klasyfikacji wyniosła 95.61%.
+- **Po SVD:** Dokładność klasyfikacji wzrosła do 97.37%.
+3. Zbiór danych `Breast Cancer (SVD)`:
+- **Przed PCA:** Dokładność klasyfikacji wyniosła 95.61%.
+- **Po PCA:** Dokładność klasyfikacji wzrosła do 96.49%.
+
+## Dyskusja 
+
+Z przeprowadzonych eksperymentów wynika, że zastosowanie SVD i PCA może mieć różne efekty w zależności od rodzaju danych i użytego modelu:
+
+- W przypadku zbioru danych HELOC zastosowanie PCA spowodowało spadek dokładności. Może to wynikać z utraty istotnych informacji, które są kluczowe dla procesu decyzyjnego w modelach drzewa decyzyjnego. PCA redukuje wymiarowość poprzez zachowanie głównych kierunków wariancji, co nie zawsze koreluje z zachowaniem najbardziej istotnych cech dla klasyfikacji.
+
+- W przypadku zbioru danych Breast Cancer, zarówno PCA, jak i SVD poprawiły dokładność klasyfikacji przy użyciu regresji logistycznej. Jest to szczególnie zauważalne dla SVD, które zachowało więcej istotnych informacji w mniejszej liczbie wymiarów. To wskazuje, że dla danych, które naturalnie zawierają mniej szumu i są bardziej skoncentrowane wokół głównych składowych, redukcja wymiarowości może faktycznie poprawić wydajność klasyfikacji.  
+
+## Wnioski
+
+PCA i SVD mogą być cennymi narzędziami w przetwarzaniu danych, jednak ich efektywność jest silnie zależna od kontekstu zastosowania i charakterystyki danych. SVD wydaje się być bardziej odporny na utratę kluczowych informacji w kontekście stosowania w regresji logistycznej, podczas gdy PCA może być bardziej narażone na pomijanie ważnych cech w kontekstach, gdzie kierunki maksymalnej wariancji nie są związane z klasyfikacją.
+
+## Zalecenia 
+
+Przed zastosowaniem PCA czy SVD warto dokładnie analizować strukturę danych oraz prowadzić eksperymenty porównawcze, by wybrać metodę najbardziej odpowiednią dla danego problemu. Ponadto, warto rozważyć inne techniki redukcji wymiarów lub selekcji cech, które mogą lepiej odpowiadać na specyfikę danych, takie jak analiza składowych niezależnych (ICA) czy selekcja cech oparta na ważności atrybutów w modelach.
+
+# 
