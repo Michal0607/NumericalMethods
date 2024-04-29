@@ -142,4 +142,9 @@ PCA i SVD mogą być cennymi narzędziami w przetwarzaniu danych, jednak ich efe
 
 Przed zastosowaniem PCA czy SVD warto dokładnie analizować strukturę danych oraz prowadzić eksperymenty porównawcze, by wybrać metodę najbardziej odpowiednią dla danego problemu. Ponadto, warto rozważyć inne techniki redukcji wymiarów lub selekcji cech, które mogą lepiej odpowiadać na specyfikę danych, takie jak analiza składowych niezależnych (ICA) czy selekcja cech oparta na ważności atrybutów w modelach.
 
-# 
+# Bibliografia
+
+- https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html
+- https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.TruncatedSVD.html
+- https://www.geeksforgeeks.org/singular-value-decomposition-svd/
+- https://www.stat.cmu.edu/~cshalizi/uADA/12/lectures/ch18.pdf
